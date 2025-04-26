@@ -37,10 +37,12 @@ function validatePhoneNumber(input) {
     return regex.test(input)
 }
 
+const mainBlock = document.querySelector(".main")
+
 window.addEventListener(
     "scroll",
     () => {
-        document.body.style.setProperty("--scroll", window.scrollY / (document.body.offsetHeight - window.innerHeight))
+        document.body.style.setProperty("--scroll", window.scrollY / (mainBlock.offsetHeight - window.innerHeight))
     },
     false
 )
