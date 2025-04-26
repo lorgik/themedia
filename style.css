@@ -1,21 +1,26 @@
 :root {
+    --neutral-white: #ffffff;
+
+    --neutral-lightgrey-100: #f8f8f8;
+
     --neutral-dark-700: #111018;
+    --neutral-dark-600: #15151e;
     --neutral-dark-500: #1c1b28;
     --neutral-dark-400: #4a495b;
     --neutral-dark-200: #a19fb2;
 
-    --neutral-lightgrey-100: #f8f8f8;
-
-    --neutral-white: #ffffff;
-
     --accent-yellow-500: #faa70d;
 
     --accent-orange-500: #f65d07;
+    --accent-orange-100: #fedfcd;
 
     --accent-red-700: #8a0a13;
     --accent-red-500: #e7111f;
+    --accent-red-100: #fccfd2;
 
+    --accent-purple-600: #4821d9;
     --accent-purple-500: #6134ff;
+    --accent-purple-100: #dfd6ff;
 
     --green-color: #43d85a;
 
@@ -68,8 +73,10 @@ button {
 
 .header {
     position: fixed;
+    z-index: 100;
     width: 100%;
     font-size: 14px;
+    /* background-color: var(--neutral-dark-700); */
 }
 
 .header .container {
@@ -162,6 +169,17 @@ button {
     -moz-background-clip: content;
     -webkit-background-clip: content;
     background-clip: content-box;
+
+    animation: increase 1s ease infinite alternate;
+}
+
+@keyframes increase {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.25);
+    }
 }
 
 .phone__text {
@@ -182,6 +200,7 @@ button {
 
 .services__menu {
     position: fixed;
+    z-index: 200;
     display: none;
     top: 90px;
     width: 100%;
@@ -225,7 +244,6 @@ button {
 }
 
 .services__right {
-    background-color: var(--neutral-lightgrey-100);
     color: var(--neutral-dark-700);
     height: 430px;
     aspect-ratio: 3.44 / 4.3;
@@ -245,10 +263,12 @@ button {
 
 .card.purple {
     background-color: var(--accent-purple-500);
+    color: var(--accent-purple-100);
 }
 
 .card.orange {
     background-color: var(--accent-orange-500);
+    color: var(--accent-orange-100);
     border-radius: 20px;
     aspect-ratio: 3.1 / 4.1;
 }
@@ -349,6 +369,7 @@ button {
     color: var(--neutral-lightgrey-100);
     text-align: center;
     text-wrap: balance;
+    -webkit-text-wrap: balance; /* Для Safari 17+ */
 }
 
 .main__circles {
@@ -464,10 +485,121 @@ button {
 .main__bg {
     top: 467px;
     position: absolute;
-    z-index: -1;
+    z-index: -9;
     width: 100%;
     height: 658px;
     background-image: url("assets/img/main-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-position: center 100px;
+
+    animation: run 5s ease; */
+}
+
+.main__radial {
+    position: absolute;
+    z-index: -10;
+    width: 2284px;
+    height: 2284px;
+    top: -780px;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    /* Аппаратное ускорение */
+    transform: translate3d(-50%, 0, 0);
+
+    background: radial-gradient(72.15% 72.15% at 50% 27.85%, #111018 64.38%, #e7111f 80.18%, #fedfcd 100%);
+    -webkit-backface-visibility: hidden; /* Исправляет артефакты в Safari */
+    filter: blur(175px);
+    -webkit-filter: blur(175px); /* Префикс для Safari */
+}
+
+/* @keyframes run {
+    0% {
+        background-position: center 0;
+    }
+    100% {
+        background-position: center 100px;
+    }
+} */
+
+.main-signs {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 80px;
+}
+
+.sign {
+    display: flex;
+    border-radius: 30px;
+    background-color: var(--neutral-dark-400);
+    padding: 45px 24px;
+
+    transform: translateY(calc(var(--scroll) * -100px * var(--speed)));
+}
+.sign-1,
+.sign-3 {
+    width: 320px;
+    aspect-ratio: 3.2 / 4;
+}
+.sign-2 {
+    width: 360px;
+    aspect-ratio: 3.6 / 3.18;
+}
+
+.sign-1 {
+    background-color: var(--neutral-dark-600);
+    color: var(--neutral-lightgrey-100);
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    background-image: url("assets/img/wda-card.jpg");
+    background-size: cover;
+}
+.sign-2 {
+    background-color: var(--accent-red-500);
+    color: var(--accent-red-100);
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0px 20px 250px 20px rgba(231, 17, 31, 0.75);
+
+    background-image: url("assets/img/runet-card.jpg");
+    background-size: cover;
+}
+.sign-3 {
+    background-color: var(--accent-purple-500);
+    color: var(--accent-purple-100);
+
+    flex-direction: column;
+}
+
+.sign__title {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.sign__desc {
+    max-width: 150px;
+    font-size: 16px;
+    text-wrap: balance;
+}
+
+.sign__circles {
+    display: flex;
+    margin-top: 30px;
+}
+
+.sign__circles .circle {
+    border-width: 0;
+}
+
+.sign__circles .circle.purple {
+    background-color: var(--accent-purple-600);
+}
+
+.sign-3 .sign__desc {
+    margin-top: auto;
 }
