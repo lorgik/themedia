@@ -12,7 +12,7 @@
     <body>
         <header class="header">
             <div class="container">
-                <a href="/" class="logo"><img src="assets/img/logo.svg" alt="" /></a>
+                <a href="/" class="logo"><img src="assets/img/logo.svg" alt="themedia" width="141" /></a>
                 <nav>
                     <ul class="menu">
                         <li class="menu__item menu__item--services">
@@ -57,81 +57,225 @@
             </div>
         </header>
 
-        <main class="main">
-            <div class="container">
-                <div class="center">
-                    <span class="main__subtitle">ПРИМЕНЯЕМ ВСЕ ПОСЛЕДНИЕ AI ТЕХНОЛОГИИ</span>
-                    <h1 class="main__title">
-                        <span> Оказываем системно-эффективные digital-услуги, </span>
-                        <div class="main__circles">
-                            <div class="circle red"></div>
-                            <div class="circle yellow"></div>
-                            <div class="circle purple"></div>
-                        </div>
-                        <span>увеличивающие <span class="markered grey">бизнес-показатели заказчиков</span></span>
-                    </h1>
-                    <form class="main-form">
-                        <div class="input-container">
-                            <input
-                                type="tel"
-                                class="phone-input"
-                                placeholder="+7 (999) 999-99-99"
-                                maxlength="18"
-                                required
-                            />
-                            <div class="country-code">+7</div>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span class="submit-btn__text">записаться на разбор</span>
-                        </button>
-                    </form>
-                    <p class="main__desc">
-                        <span class="bold">Оставьте заявку на системный разбор</span> вашего маркетингового отдела
-                    </p>
-                    <div class="main-signs">
-                        <div class="sign sign-1" data-speed="2.5">
-                            <h3 class="sign__title">#1</h3>
-                            <span class="sign__desc">рейтинга WDA по “Комплексному маркетингу”</span>
-                        </div>
-                        <div class="sign sign-2" data-speed="1.5">
-                            <h3 class="sign__title">#1</h3>
-                            <span class="sign__desc">в рейтинге Рунета по “Разработке проектов”</span>
-                        </div>
-                        <div class="sign sign-3" data-speed="3">
-                            <h3 class="sign__title">Мы профи</h3>
-                            <div class="sign__circles">
-                                <div class="circle red" data-speed="0.5"></div>
-                                <div class="circle yellow" data-speed="1.5"></div>
-                                <div class="circle purple" data-speed="3"></div>
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <main class="main">
+                    <div class="container">
+                        <div class="center">
+                            <span class="main__subtitle subtitle">ПРИМЕНЯЕМ ВСЕ ПОСЛЕДНИЕ AI ТЕХНОЛОГИИ</span>
+                            <h1 class="main__title">
+                                <span> Оказываем системно-эффективные digital-услуги, </span>
+                                <div class="main__circles">
+                                    <div class="circle red"></div>
+                                    <div class="circle yellow"></div>
+                                    <div class="circle purple"></div>
+                                </div>
+                                <span
+                                    >увеличивающие <span class="markered grey">бизнес-показатели заказчиков</span></span
+                                >
+                            </h1>
+                            <form class="main-form form">
+                                <div class="input-container">
+                                    <input
+                                        type="tel"
+                                        class="phone-input"
+                                        placeholder="+7 (999) 999-99-99"
+                                        maxlength="18"
+                                        required
+                                    />
+                                    <div class="country-code">+7</div>
+                                </div>
+                                <button type="submit" class="submit-btn">
+                                    <span class="submit-btn__text">записаться на разбор</span>
+                                </button>
+                            </form>
+                            <p class="main__desc">
+                                <span class="bold">Оставьте заявку на системный разбор</span> вашего маркетингового
+                                отдела
+                            </p>
+                            <div class="main-signs">
+                                <div class="sign sign-1" data-speed="clamp(1.2)">
+                                    <h3 class="sign__title">#1</h3>
+                                    <span class="sign__desc">рейтинга WDA по “Комплексному маркетингу”</span>
+                                </div>
+                                <div class="sign sign-2" data-speed="clamp(1.3)">
+                                    <h3 class="sign__title">#1</h3>
+                                    <span class="sign__desc">в рейтинге Рунета по “Разработке проектов”</span>
+                                </div>
+                                <div class="sign sign-3" data-speed="clamp(1.4)">
+                                    <h3 class="sign__title">Мы профи</h3>
+                                    <div class="sign__circles">
+                                        <div class="circle red"></div>
+                                        <div class="circle yellow"></div>
+                                        <div class="circle purple"></div>
+                                    </div>
+                                    <span class="sign__desc"
+                                        >профессиональная команда с опытом больше 7 лет в 100 + нишах</span
+                                    >
+                                </div>
                             </div>
-                            <span class="sign__desc">профессиональная команда с опытом больше 7 лет в 100 + нишах</span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="main__radial"></div> -->
+                    <div class="main__bg" data-speed="clamp(0.9)"></div>
+                </main>
+
+                <div class="services">
+                    <div class="services__bordered-shape">
+                        <div class="container">
+                            <div class="heading">
+                                <div class="mark-area">
+                                    <span class="services__mark mark">Услуги</span>
+                                </div>
+                                <h2 class="services__title title">
+                                    Мы знаем, как реализовать проекты для увеличения ваших бизнес показателей
+                                </h2>
+                            </div>
+                            <div class="services-box">
+                                <div class="services__card services__card-1">
+                                    <span class="quote">“</span>
+                                    <p class="services__card-text">
+                                        <span class="semibold">Являемся эталоном качества</span> оказания digital услуг
+                                        для представителей бизнеса и профессионального сообщества в РФ и СНГ
+                                    </p>
+                                    <div class="author">
+                                        <img src="assets/img/ceo-themedia.jpg" alt="Николай" width="76" height="76" />
+                                        <div class="author__info">
+                                            <span class="author__name">Николай</span>
+                                            <span class="author__post">CEO themedia</span>
+                                        </div>
+                                    </div>
+                                    <a href="" class="services__link">
+                                        <svg
+                                            width="22"
+                                            height="22"
+                                            viewBox="0 0 22 22"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M17.0231 6.04101C16.9359 6.06121 14.829 6.87792 12.341 7.85591C9.85303 8.8339 7.11726 9.90796 6.26153 10.2427C5.40579 10.5775 4.62785 10.8883 4.53277 10.9335C4.09323 11.1424 3.91203 11.4 4.04039 11.6334C4.1302 11.7967 4.22851 11.8468 4.82089 12.031C6.02279 12.4046 6.68925 12.597 6.9322 12.6405C7.27628 12.7021 7.8088 12.6826 8.03619 12.6001C8.12928 12.5662 8.73772 12.1958 9.47682 11.7228C13.9458 8.86295 14.0693 8.78794 14.3751 8.74811C14.4744 8.73519 14.5131 8.74151 14.5428 8.77557C14.6015 8.84272 14.5641 9.01967 14.4551 9.19054C14.3077 9.42164 12.61 11.0012 10.9004 12.4978C10.3337 12.994 10.2063 13.1265 10.1526 13.2764C10.0916 13.4465 10.0969 13.5451 10.176 13.7057C10.2782 13.9134 10.5532 14.1329 11.5265 14.7836C12.3551 15.3375 14.3571 16.5871 14.6316 16.7217C14.9269 16.8665 15.2747 16.9748 15.5119 16.9958C15.956 17.0352 16.2952 16.7956 16.4299 16.3474C16.5058 16.0946 17.7626 8.5301 17.9438 7.23521C18.04 6.54794 18.0191 6.34944 17.8309 6.16198C17.67 6.00176 17.3797 5.95828 17.0231 6.04101Z"
+                                                fill="#4821D9"
+                                            />
+                                        </svg>
+                                        <span>telegram канал CEO themedia</span>
+                                    </a>
+                                </div>
+                                <a class="services__card services__card-2" href="javascript:void(0);">
+                                    <span class="mark">01</span>
+                                    <h3 class="services__card-title">Бесперебойная система лидогенерации 360</h3>
+                                    <p class="services__card-text">
+                                        Создаем мульти и омникальные кампании на базе аналитики и глубокой стратегии
+                                    </p>
+                                    <svg
+                                        width="22"
+                                        height="22"
+                                        viewBox="0 0 22 22"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
+                                            fill="#F8F8F8"
+                                        />
+                                    </svg>
+                                </a>
+                                <a class="services__card services__card-3" href="javascript:void(0);">
+                                    <span class="mark">02</span>
+                                    <h3 class="services__card-title">Всесторонние услуги</h3>
+                                    <p class="services__card-text">
+                                        Предоставляем все услуги во всех направлениях digital-маркетинга
+                                    </p>
+                                    <svg
+                                        width="22"
+                                        height="22"
+                                        viewBox="0 0 22 22"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
+                                            fill="#F8F8F8"
+                                        />
+                                    </svg>
+                                </a>
+                                <a class="services__card services__card-4" href="javascript:void(0);">
+                                    <span class="mark">03</span>
+                                    <h3 class="services__card-title">Education</h3>
+                                    <p class="services__card-text">
+                                        Оказываем обучающие услуги для представителей digital сообщества
+                                    </p>
+                                    <svg
+                                        width="22"
+                                        height="22"
+                                        viewBox="0 0 22 22"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
+                                            fill="#F8F8F8"
+                                        />
+                                    </svg>
+                                </a>
+                                <div class="services__card services__card-5">
+                                    <h3 class="services__card-title">
+                                        Записаться на разбор вашего маркетинга бизнес ассистентом
+                                    </h3>
+                                    <p class="services__card-text">45 минут экспертного разбора</p>
+                                    <form class="services-form form">
+                                        <div class="input-container">
+                                            <input
+                                                type="tel"
+                                                class="phone-input"
+                                                placeholder="+7 (999) 999-99-99"
+                                                maxlength="18"
+                                                required
+                                            />
+                                            <div class="country-code">+7</div>
+                                        </div>
+                                        <button type="submit" class="submit-btn">
+                                            <span class="submit-btn__text">записаться на разбор</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="main__radial"></div>
-            <div class="main__bg"></div>
-        </main>
-
-        <div class="services">
-            <div class="services__bordered-shape">
-                <div class="container">
-                    <div class="heading">
-                        <div class="mark-area">
-                            <span class="services__mark mark">Услуги</span>
+                <div class="numbers">
+                    <div class="container">
+                        <div class="center">
+                            <span class="numbers__subtitle subtitle">ЦИФРЫ ГОВОРЯТ САМИ ЗА СЕБЯ</span>
+                            <h2 class="numbers__title title">Что такое система?</h2>
+                            <div class="numbers-cards">
+                                <div class="numbers-card-1" data-speed="1.2">
+                                    <h3 class="numbers-card__title">800 000 000 +</h3>
+                                    <span class="numbers-card__text">бюджета открутили</span>
+                                </div>
+                                <div class="numbers-card-2" data-speed="1.4">
+                                    <h3 class="numbers-card__title">1 000 000 +</h3>
+                                    <span class="numbers-card__text">заявок привели</span>
+                                </div>
+                                <div class="numbers-card-3" data-speed="clamp(1.2)">
+                                    <h3 class="numbers-card__title">300 +</h3>
+                                    <span class="numbers-card__text">проектов успешно реализовано</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2 class="services__title">
-                            Мы знаем, как реализовать проекты для увеличения ваших бизнес показателей
-                        </h2>
                     </div>
-                    <div class="services-box">
-                        <div class="services__card services__card-1">text</div>
-                        <a class="services__card services__card-2" href="javascript:void(0);">text</a>
-                        <a class="services__card services__card-3" href="javascript:void(0);">text</a>
-                        <a class="services__card services__card-4" href="javascript:void(0);"></a>
-                        <div class="services__card services__card-5">text</div>
-                    </div>
+
+                    <!-- <div class="numbers__bg"></div> -->
                 </div>
             </div>
         </div>
@@ -155,8 +299,8 @@
                     </a>
                     <div class="services__content">
                         <div class="services__info">
-                            <h3 class="services__title">Всесторонние услуги:</h3>
-                            <p class="services__text">Предоставляем услуги во всех направлениях маркетинга</p>
+                            <h3 class="services__info-title">Всесторонние услуги:</h3>
+                            <p class="services__info-text">Предоставляем услуги во всех направлениях маркетинга</p>
                         </div>
                         <ul class="services__tabs">
                             <li class="services__tab"><a href="#">Контекст</a></li>
@@ -186,7 +330,7 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
         <script>
             const lenis = new Lenis()
 
@@ -196,7 +340,13 @@
             }
 
             requestAnimationFrame(raf)
-        </script>
+        </script> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+        <!-- ScrollSmoother requires ScrollTrigger -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
 
         <script src="script.js"></script>
     </body>
