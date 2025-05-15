@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isAnimating = false
     let headerAnimation = gsap.to(header, {
         y: -100,
-        duration: 0.15,
+        duration: 0.2,
         paused: true, // Создаем анимацию заранее, но не запускаем
     })
 
