@@ -6,6 +6,7 @@
     --neutral-dark-700: #111018;
     --neutral-dark-600: #15151e;
     --neutral-dark-500: #1c1b28;
+    --neutral-dark-450: #313043;
     --neutral-dark-400: #4a495b;
     --neutral-dark-300: #7e7c92;
     --neutral-dark-200: #a19fb2;
@@ -79,7 +80,8 @@ button {
 }
 
 .btn {
-    padding: 20px 16px;
+    padding: 21px 16px;
+    font-size: 14px;
     border-radius: 100px;
 }
 .btn.white {
@@ -204,7 +206,7 @@ button {
 .phone__icon {
     position: relative;
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 21px;
+    padding: 17px;
     display: inline-block;
     border-radius: 50%;
 }
@@ -1012,6 +1014,10 @@ a.services__link {
 .footer .container {
     padding-top: 100px;
     padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
 }
 
 .footer__top {
@@ -1020,10 +1026,9 @@ a.services__link {
 }
 
 .footer__links {
-    margin-top: 40px;
     display: flex;
-    justify-content: space-between;
     align-items: stretch;
+    flex-wrap: wrap;
     gap: 32px;
 }
 
@@ -1074,6 +1079,54 @@ a.services__link {
     font-size: 24px;
 }
 
+.footer__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer__btn {
+    border-radius: 50%;
+    background-color: var(--neutral-dark-500);
+    padding: 17px;
+    display: inline-block;
+}
+
+.footer__contact {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer__contacts-text {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: auto;
+}
+
+.footer__messengers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.divider {
+    background-color: var(--neutral-dark-450);
+    width: 100%;
+    height: 1px;
+}
+
+.footer__info {
+    font-size: 12px;
+    color: var(--neutral-dark-300);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
 @media screen and (max-width: 1280px) {
     .header nav {
         order: 1;
@@ -1093,6 +1146,21 @@ a.services__link {
     }
     .header .container {
         padding: 11px 32px;
+    }
+    .container {
+        padding: 0 32px;
+    }
+    .btn {
+        padding: 17px 16px;
+        font-size: 12px;
+    }
+    .footer__contacts {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer__info {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 @media screen and (max-width: 640px) {
