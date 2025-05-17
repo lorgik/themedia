@@ -7,12 +7,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
         <header class="header">
             <div class="container">
-                <a href="/" class="logo"><img src="assets/img/logo.svg" alt="themedia" width="150" /></a>
+                <a href="/" class="logo"><img src="assets/images/logo.svg" alt="themedia" width="150" /></a>
                 <nav>
                     <ul class="menu">
                         <li class="menu__item menu__item--services">
@@ -70,7 +70,7 @@
                     <div class="container">
                         <div class="center">
                             <span class="main__subtitle subtitle">ПРИМЕНЯЕМ ВСЕ ПОСЛЕДНИЕ AI ТЕХНОЛОГИИ</span>
-                            <h1 class="main__title">
+                            <h1 class="main__title title">
                                 <span>Оказываем системно-эффективные digital-услуги,</span>
                                 <div class="main__circles">
                                     <div class="circle red"></div>
@@ -111,11 +111,11 @@
                                 </div>
                                 <div class="sign sign-3" data-speed="clamp(1.4)">
                                     <h3 class="sign__title">Мы профи</h3>
-                                    <div class="sign__circles">
+                                    <!-- <div class="sign__circles">
                                         <div class="circle red"></div>
                                         <div class="circle yellow"></div>
                                         <div class="circle purple"></div>
-                                    </div>
+                                    </div> -->
                                     <span class="sign__desc"
                                         >профессиональная команда с опытом больше 7 лет в 100 + нишах</span
                                     >
@@ -141,13 +141,31 @@
                             </div>
                             <div class="services-box">
                                 <div class="services__card services__card-1">
-                                    <span class="quote">“</span>
+                                    <!-- <span class="quote">“</span> -->
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M18 5.11202L17.7278 7.22156C17.0624 7.1762 16.5482 7.29717 16.1853 7.58449C15.8223 7.87182 15.5803 8.27256 15.4594 8.78671C15.3384 9.30086 15.3157 9.88307 15.3913 10.5333H18V16H12.9868V10.0797C12.9868 8.29524 13.4102 6.94936 14.2571 6.04203C15.1191 5.11958 16.3667 4.80957 18 5.11202ZM11.0132 5.11202L10.741 7.22156C10.0756 7.1762 9.56144 7.29717 9.19849 7.58449C8.83554 7.87182 8.59357 8.27256 8.47259 8.78671C8.35161 9.30086 8.32892 9.88307 8.40454 10.5333H11.0132V16H6V10.0797C6 8.29524 6.42344 6.94936 7.27032 6.04203C8.13232 5.11958 9.37996 4.80957 11.0132 5.11202Z"
+                                            fill="#F65D07"
+                                        />
+                                    </svg>
+
                                     <p class="services__card-text">
-                                        <span class="semibold">Являемся эталоном качества</span> оказания digital услуг
+                                        <span class="semibold">Являемся эталоном качества оказания digital услуг</span>
                                         для представителей бизнеса и профессионального сообщества в РФ и СНГ
                                     </p>
                                     <div class="author">
-                                        <img src="assets/img/ceo-themedia.jpg" alt="Николай" width="76" height="76" />
+                                        <img
+                                            src="assets/images/ceo-themedia.jpg"
+                                            alt="Николай"
+                                            width="76"
+                                            height="76"
+                                        />
                                         <div class="author__info">
                                             <span class="author__name">Николай</span>
                                             <span class="author__post">CEO themedia</span>
@@ -155,19 +173,20 @@
                                     </div>
                                     <a href="" class="services__link">
                                         <svg
-                                            width="22"
-                                            height="22"
-                                            viewBox="0 0 22 22"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
                                                 fill-rule="evenodd"
                                                 clip-rule="evenodd"
-                                                d="M17.0231 6.04101C16.9359 6.06121 14.829 6.87792 12.341 7.85591C9.85303 8.8339 7.11726 9.90796 6.26153 10.2427C5.40579 10.5775 4.62785 10.8883 4.53277 10.9335C4.09323 11.1424 3.91203 11.4 4.04039 11.6334C4.1302 11.7967 4.22851 11.8468 4.82089 12.031C6.02279 12.4046 6.68925 12.597 6.9322 12.6405C7.27628 12.7021 7.8088 12.6826 8.03619 12.6001C8.12928 12.5662 8.73772 12.1958 9.47682 11.7228C13.9458 8.86295 14.0693 8.78794 14.3751 8.74811C14.4744 8.73519 14.5131 8.74151 14.5428 8.77557C14.6015 8.84272 14.5641 9.01967 14.4551 9.19054C14.3077 9.42164 12.61 11.0012 10.9004 12.4978C10.3337 12.994 10.2063 13.1265 10.1526 13.2764C10.0916 13.4465 10.0969 13.5451 10.176 13.7057C10.2782 13.9134 10.5532 14.1329 11.5265 14.7836C12.3551 15.3375 14.3571 16.5871 14.6316 16.7217C14.9269 16.8665 15.2747 16.9748 15.5119 16.9958C15.956 17.0352 16.2952 16.7956 16.4299 16.3474C16.5058 16.0946 17.7626 8.5301 17.9438 7.23521C18.04 6.54794 18.0191 6.34944 17.8309 6.16198C17.67 6.00176 17.3797 5.95828 17.0231 6.04101Z"
-                                                fill="#4821D9"
+                                                d="M17.9533 6.04474C17.8599 6.06678 15.6025 6.95773 12.9368 8.02463C10.2711 9.09153 7.33993 10.2632 6.42307 10.6284C5.5062 10.9936 4.6727 11.3327 4.57082 11.382C4.09989 11.6099 3.90574 11.8909 4.04327 12.1456C4.1395 12.3237 4.24483 12.3783 4.87953 12.5792C6.16727 12.9869 6.88134 13.1967 7.14164 13.2442C7.5103 13.3114 8.08085 13.2901 8.32449 13.2001C8.42423 13.1632 9.07613 12.759 9.86802 12.243C14.6562 9.12322 14.7885 9.04139 15.1162 8.99794C15.2226 8.98384 15.264 8.99074 15.2959 9.02789C15.3588 9.10115 15.3187 9.29419 15.2019 9.48059C15.0439 9.7327 13.225 11.4558 11.3933 13.0886C10.7861 13.6298 10.6496 13.7744 10.5921 13.9378C10.5267 14.1235 10.5324 14.2311 10.6171 14.4062C10.7267 14.6328 11.0213 14.8723 12.0641 15.5821C12.9519 16.1864 15.0968 17.5496 15.391 17.6964C15.7074 17.8543 16.08 17.9725 16.3341 17.9954C16.81 18.0384 17.1735 17.777 17.3177 17.288C17.3991 17.0123 18.7457 8.76011 18.9398 7.3475C19.0429 6.59775 19.0205 6.38121 18.8188 6.17671C18.6464 6.00192 18.3354 5.95449 17.9533 6.04474Z"
+                                                fill="#6134FF"
                                             />
                                         </svg>
+
                                         <span>telegram канал CEO themedia</span>
                                     </a>
                                 </div>
@@ -178,17 +197,17 @@
                                         Создаем мульти и омникальные кампании на базе аналитики и глубокой стратегии
                                     </p>
                                     <svg
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 22 22"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
                                             fill-rule="evenodd"
                                             clip-rule="evenodd"
-                                            d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
-                                            fill="#F8F8F8"
+                                            d="M13.0555 5L20 12L13.0555 19L11.708 17.6418L16.3522 12.9604H4V11.0396H16.3522L11.708 6.35825L13.0555 5Z"
+                                            fill="#FEDFCD"
                                         />
                                     </svg>
                                 </a>
@@ -199,16 +218,16 @@
                                         Предоставляем все услуги во всех направлениях digital-маркетинга
                                     </p>
                                     <svg
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 22 22"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
                                             fill-rule="evenodd"
                                             clip-rule="evenodd"
-                                            d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
+                                            d="M13.0555 5L20 12L13.0555 19L11.708 17.6418L16.3522 12.9604H4V11.0396H16.3522L11.708 6.35825L13.0555 5Z"
                                             fill="#F8F8F8"
                                         />
                                     </svg>
@@ -220,17 +239,17 @@
                                         Оказываем обучающие услуги для представителей digital сообщества
                                     </p>
                                     <svg
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 22 22"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
                                             fill-rule="evenodd"
                                             clip-rule="evenodd"
-                                            d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
-                                            fill="#F8F8F8"
+                                            d="M13.0555 5L20 12L13.0555 19L11.708 17.6418L16.3522 12.9604H4V11.0396H16.3522L11.708 6.35825L13.0555 5Z"
+                                            fill="#DFD6FF"
                                         />
                                     </svg>
                                 </a>
@@ -238,7 +257,10 @@
                                     <h3 class="services__card-title">
                                         Записаться на разбор вашего маркетинга бизнес ассистентом
                                     </h3>
-                                    <p class="services__card-text">45 минут экспертного разбора</p>
+                                    <p class="services__card-text">
+                                        В результате 45 минут экспертного разбора получите готовое руководство по
+                                        системному лидгену
+                                    </p>
                                     <form class="services-form form">
                                         <div class="input-container">
                                             <input
@@ -322,6 +344,147 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="cases__box">
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Разработка сайта</span
+                                            ><span class="badge-small">Авито</span>
+                                            <span class="badge-small">Таргет</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="" class="cases__item">
+                                    <div class="case__img-wrapper">
+                                        <img src="assets/images/case-barbarossa.jpg" alt="кейс" />
+                                        <div class="cases__badges">
+                                            <span class="badge-small">Badge Small</span
+                                            ><span class="badge-small">Badge Small</span>
+                                        </div>
+                                    </div>
+                                    <div class="case__item-info">
+                                        <h4 class="case__title">BarbarossA</h4>
+                                        <p class="case__desc">
+                                            Увеличили оборот компании с 50 до 800 000 000 рублей за 5 лет
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <button class="cases__btn btn black">
+                                <span class="btn__text">посмотреть все проекты</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -329,7 +492,7 @@
                 <footer class="footer">
                     <div class="container">
                         <div class="footer__top">
-                            <a href="/" class="logo"><img src="assets/img/logo.svg" alt="themedia" width="180" /></a>
+                            <a href="/" class="logo"><img src="assets/images/logo.svg" alt="themedia" width="180" /></a>
 
                             <button type="submit" class="btn white">
                                 <span class="btn__text">перезвоните мне</span>
@@ -339,7 +502,8 @@
                         <div class="footer__links">
                             <div class="footer__category footer__services">
                                 <a href="#" class="footer__link category__link"
-                                    >Услуги<svg
+                                    ><span>Услуги</span
+                                    ><svg
                                         width="16"
                                         height="16"
                                         viewBox="0 0 16 16"
@@ -351,6 +515,20 @@
                                         <circle cx="10.4241" cy="6.57608" r="0.909091" fill="#F8F8F8" />
                                         <circle cx="10.4241" cy="11.4247" r="0.909091" fill="#F8F8F8" />
                                     </svg>
+                                    <div class="category__link-arrow">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M8 5L13 9.75874L11.6952 11L7.9994 7.48309L4.30419 11L3 9.75874L8 5Z"
+                                                fill="#F8F8F8"
+                                            />
+                                        </svg>
+                                    </div>
                                 </a>
                                 <a href="#" class="footer__link">Система 360</a>
                                 <a href="#" class="footer__link">Контекстная реклама</a>
@@ -363,13 +541,43 @@
                             </div>
 
                             <div class="footer__category">
-                                <a href="#" class="footer__link category__link">Полезное</a>
+                                <a href="#" class="footer__link category__link"
+                                    ><span>Полезное</span>
+                                    <div class="category__link-arrow">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M8 5L13 9.75874L11.6952 11L7.9994 7.48309L4.30419 11L3 9.75874L8 5Z"
+                                                fill="#F8F8F8"
+                                            />
+                                        </svg></div
+                                ></a>
                                 <a href="#" class="footer__link">Блог</a>
                                 <a href="#" class="footer__link">Отраслевые решения</a>
                             </div>
 
                             <div class="footer__category">
-                                <a href="#" class="footer__link category__link">Компания</a>
+                                <a href="#" class="footer__link category__link"
+                                    ><span>Компания</span>
+                                    <div class="category__link-arrow">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M8 5L13 9.75874L11.6952 11L7.9994 7.48309L4.30419 11L3 9.75874L8 5Z"
+                                                fill="#F8F8F8"
+                                            />
+                                        </svg></div
+                                ></a>
                                 <a href="#" class="footer__link">О компании</a>
                                 <a href="#" class="footer__link">Карьера</a>
                                 <a href="#" class="footer__link">Контакты</a>
@@ -530,12 +738,12 @@
                         <p class="card__text">
                             Создаем мульти и омникальные кампании на базе аналитики и глубокой стратегии
                         </p>
-                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 fill-rule="evenodd"
                                 clip-rule="evenodd"
-                                d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
-                                fill="#F8F8F8"
+                                d="M13.0555 5L20 12L13.0555 19L11.708 17.6418L16.3522 12.9604H4V11.0396H16.3522L11.708 6.35825L13.0555 5Z"
+                                fill="#FEDFCD"
                             />
                         </svg>
                     </a>
@@ -559,12 +767,12 @@
                     <a href="" class="card purple">
                         <h3 class="card__title">Education</h3>
                         <p class="card__text">Оказываем обучающие услуги для представителей digital сообщества</p>
-                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 fill-rule="evenodd"
                                 clip-rule="evenodd"
-                                d="M12.0555 4L19 11L12.0555 18L10.708 16.6418L15.3522 11.9604H3V10.0396H15.3522L10.708 5.35825L12.0555 4Z"
-                                fill="#F8F8F8"
+                                d="M13.5555 5L20.5 12L13.5555 19L12.208 17.6418L16.8522 12.9604H4.5V11.0396H16.8522L12.208 6.35825L13.5555 5Z"
+                                fill="#DFD6FF"
                             />
                         </svg>
                     </a>
@@ -590,6 +798,6 @@
         <!-- ScrollSmoother requires ScrollTrigger -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
 
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

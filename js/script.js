@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-    // Инициализация с оптимизированными параметрами
     const smoother = ScrollSmoother.create({
         smooth: 1,
         effects: true,
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (now >= lastTime + 1000) {
                     // Проверяем каждую секунду
                     currentFPS = Math.round((frames * 1000) / (now - lastTime))
-                    // console.log(`FPS: ${currentFPS}`)
                     frames = 0
                     lastTime = now
 
@@ -71,44 +69,68 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         },
     })
-})
 
-const servicesMenu = document.querySelector(".services__menu")
-const servicesMenuBtn = document.querySelector(".menu__item--services")
+    const servicesMenu = document.querySelector(".services__menu")
+    const servicesMenuBtn = document.querySelector(".menu__item--services")
 
-servicesMenuBtn.addEventListener("mouseenter", () => {
-    servicesMenu.classList.add("active")
-    servicesMenuBtn.classList.add("active")
-})
-
-servicesMenuBtn.addEventListener("mouseleave", () => {
-    setTimeout(() => {
-        if (!servicesMenu.matches(":hover")) {
-            servicesMenu.classList.remove("active")
-            servicesMenuBtn.classList.remove("active")
-        }
-    }, 100)
-})
-servicesMenu.querySelector(".container").addEventListener("mouseleave", () => {
-    setTimeout(() => {
-        if (!servicesMenu.querySelector(".container").matches(":hover")) {
-            servicesMenu.classList.remove("active")
-            servicesMenuBtn.classList.remove("active")
-        }
-    }, 100)
-})
-
-const hash = window.location.hash || "#all"
-const hashTab = document.querySelector(`[href="${hash}"]`)
-hashTab.classList.add("active")
-
-const casesTabs = document.querySelectorAll(".cases__tab")
-
-casesTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-        casesTabs.forEach((tab) => tab.classList.remove("active"))
-        tab.classList.add("active")
+    servicesMenuBtn.addEventListener("mouseenter", () => {
+        servicesMenu.classList.add("active")
+        servicesMenuBtn.classList.add("active")
     })
+
+    servicesMenuBtn.addEventListener("mouseleave", () => {
+        setTimeout(() => {
+            if (!servicesMenu.matches(":hover")) {
+                servicesMenu.classList.remove("active")
+                servicesMenuBtn.classList.remove("active")
+            }
+        }, 100)
+    })
+    servicesMenu.querySelector(".container").addEventListener("mouseleave", () => {
+        setTimeout(() => {
+            if (!servicesMenu.querySelector(".container").matches(":hover")) {
+                servicesMenu.classList.remove("active")
+                servicesMenuBtn.classList.remove("active")
+            }
+        }, 100)
+    })
+
+    const hash = window.location.hash || "#all"
+    const hashTab = document.querySelector(`[href="${hash}"]`)
+    hashTab.classList.add("active")
+
+    const casesTabs = document.querySelectorAll(".cases__tab")
+
+    casesTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            casesTabs.forEach((tab) => tab.classList.remove("active"))
+            tab.classList.add("active")
+        })
+    })
+
+    // gsap.registerPlugin(SplitText)
+
+    // let split, animation
+
+    // document.querySelector(".menu__item--services").addEventListener("click", () => {
+    //     animation && animation.revert()
+    //     animation = gsap.from(split.lines, {
+    //         rotationX: -100,
+    //         transformOrigin: "50% 50% -160px",
+    //         opacity: 0,
+    //         duration: 0.8,
+    //         ease: "power3",
+    //         stagger: 0.25,
+    //     })
+    // })
+
+    // function setup() {
+    //     split && split.revert()
+    //     animation && animation.revert()
+    //     split = SplitText.create(".title", { type: "chars,words,lines" })
+    // }
+    // setup()
+    // window.addEventListener("resize", setup)
 })
 
 // casesTabs.forEach((tab) => {
