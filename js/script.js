@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
+    let isServicesShow = false
+
     const smoother = ScrollSmoother.create({
         smooth: 1,
         effects: true,
@@ -12,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastScroll = 0
     let isAnimating = false
     let headerAnimation = gsap.to(header, {
-        y: -80,
+        y: -100,
         duration: 0.3,
         paused: true, // Создаем анимацию заранее, но не запускаем
     })
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (scrollY <= 0) {
                     headerAnimation.reverse()
                 } else {
-                    if (scrollY > lastScroll) {
+                    if (scrollY > lastScroll && !isServicesShow) {
                         headerAnimation.play()
                     } else {
                         headerAnimation.reverse()
@@ -76,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     servicesMenuBtn.addEventListener("mouseenter", () => {
         servicesMenu.classList.add("active")
         servicesMenuBtn.classList.add("active")
+        isServicesShow = true
     })
 
     servicesMenuBtn.addEventListener("mouseleave", () => {
@@ -83,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!servicesMenu.matches(":hover")) {
                 servicesMenu.classList.remove("active")
                 servicesMenuBtn.classList.remove("active")
+                isServicesShow = false
             }
         }, 100)
     })
@@ -91,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!servicesMenu.querySelector(".container").matches(":hover")) {
                 servicesMenu.classList.remove("active")
                 servicesMenuBtn.classList.remove("active")
+                isServicesShow = false
             }
         }, 100)
     })
