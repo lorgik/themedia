@@ -108,3 +108,106 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 })
+
+window.addEventListener("load", function () {
+    const slider = document.querySelector(".clients__items-1")
+    const slider2 = document.querySelector(".clients__items-2")
+    const swiperConfigRun = {
+        loop: true,
+        allowTouchMove: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: false, // значение true меняет направление движения
+        },
+        effect: "slide",
+        speed: 5000, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
+        slidesPerView: 6, //Количество карточек на экране
+        spaceBetween: 0, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
+        slidesPerGroup: 1, //Пролистывание слайдов за раз
+        breakpoints: {
+            320: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                spaceBetween: 10,
+            },
+            480: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                spaceBetween: 10,
+            },
+            640: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            },
+            768: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            },
+            1000: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            },
+            1360: {
+                slidesPerView: 5,
+                slidesPerGroup: 1,
+            },
+            1920: {
+                slidesPerView: 6,
+                slidesPerGroup: 1,
+            },
+        },
+    }
+    const swiperConfigRun2 = {
+        loop: true,
+        allowTouchMove: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true, // значение true меняет направление движения
+        },
+        effect: "slide",
+        speed: 5000, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
+        slidesPerView: 6, //Количество карточек на экране
+        spaceBetween: 0, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
+        slidesPerGroup: 1, //Пролистывание слайдов за раз
+        breakpoints: {
+            320: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                spaceBetween: 10,
+            },
+            480: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                spaceBetween: 10,
+            },
+            640: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            },
+            768: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            },
+            1000: {
+                slidesPerView: 4,
+                slidesPerGroup: 1,
+            },
+            1360: {
+                slidesPerView: 5,
+                slidesPerGroup: 1,
+            },
+            1920: {
+                slidesPerView: 6,
+                slidesPerGroup: 1,
+            },
+        },
+    }
+    const swiperRun = new Swiper(slider, swiperConfigRun)
+    const swiperRun2 = new Swiper(slider2, swiperConfigRun2)
+    window.addEventListener("resize", () => {
+        swiperRun.update()
+        swiperRun2.update()
+    })
+})

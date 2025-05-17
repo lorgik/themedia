@@ -521,7 +521,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="clients__items swiper">
+                            <div class="clients__items swiper clients__items-2">
                                 <div class="clients__wrapper swiper-wrapper">
                                     <div class="swiper-slide clients__item">
                                         <img src="assets/images/sts-logo.svg" alt="stslog" />
@@ -543,6 +543,61 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="levels">
+                    <div class="container">
+                        <div class="heading">
+                            <div class="badge-area">
+                                <span class="levels__badge badge orange dark">С кем работаем</span>
+                            </div>
+                            <div class="right-area">
+                                <h2 class="levels__title title">
+                                    Предоставляем доступ для роста всем
+                                    <span class="markered grey">уровням бизнеса</span>
+                                </h2>
+                                <p class="levels__desc desc">Систематизировали маркетинг в более чем 300 проектов</p>
+                            </div>
+                        </div>
+                        <div class="levels__cards">
+                            <div class="levels__card white">
+                                <h3 class="levels__card-title">Малый</h3>
+                                <p class="levels__card-desc">
+                                    Найдем оптимальные решения даже в условиях ограниченного бюджета
+                                </p>
+                            </div>
+                            <div class="levels__card purple">
+                                <h3 class="levels__card-title">Средний</h3>
+                                <p class="levels__card-desc">
+                                    Внедрим лучшие практики, интегрируем инструменты, чтобы все работало как часы
+                                </p>
+                            </div>
+                            <div class="levels__card orange">
+                                <h3 class="levels__card-title">Крупный</h3>
+                                <p class="levels__card-desc">
+                                    Соберем решение для самых комплексных задач и настроим удобные процессы управления
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry">
+                    <div class="container">
+                        <div class="heading">
+                            <div class="badge-area">
+                                <span class="industry__badge badge red dark">Готовые отрасли</span>
+                            </div>
+                            <h2 class="industry__title title">
+                                Отраслевые готовые решения для
+                                <span class="markered grey">масштабирования лидогенерации</span>
+                            </h2>
+                        </div>
+
+                        <div class="industry__slider">
+                            <div class="industry__wrapper"></div>
                         </div>
                     </div>
                 </div>
@@ -859,24 +914,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <!-- Подключаем Swiper JS -->
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const tickerSwiper = new Swiper(".clients__items-1", {
-                    direction: "horizontal",
-                    loop: true,
-                    autoplay: {
-                        delay: 0,
-                        disableOnInteraction: false,
-                    },
-                    speed: 10000,
-                    slidesPerView: "auto",
-                    allowTouchMove: false,
-                    spaceBetween: 0,
-                    freeMode: true,
-                    freeModeMomentum: false,
-                })
-            })
-        </script>
+
         <script src="js/script.js"></script>
     </body>
 </html>
