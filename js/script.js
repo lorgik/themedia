@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastScroll = 0
     let isAnimating = false
     let headerAnimation = gsap.to(header, {
-        y: -100,
-        duration: 0.2,
+        y: -80,
+        duration: 0.3,
         paused: true, // Создаем анимацию заранее, но не запускаем
     })
 
@@ -107,32 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
             tab.classList.add("active")
         })
     })
-
-    // gsap.registerPlugin(SplitText)
-
-    // let split, animation
-
-    // document.querySelector(".menu__item--services").addEventListener("click", () => {
-    //     animation && animation.revert()
-    //     animation = gsap.from(split.lines, {
-    //         rotationX: -100,
-    //         transformOrigin: "50% 50% -160px",
-    //         opacity: 0,
-    //         duration: 0.8,
-    //         ease: "power3",
-    //         stagger: 0.25,
-    //     })
-    // })
-
-    // function setup() {
-    //     split && split.revert()
-    //     animation && animation.revert()
-    //     split = SplitText.create(".title", { type: "chars,words,lines" })
-    // }
-    // setup()
-    // window.addEventListener("resize", setup)
 })
-
-// casesTabs.forEach((tab) => {
-//     casesTabs.forEach((tab) => tab.classList.remove("active"))
-// })

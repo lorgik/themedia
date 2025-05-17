@@ -7,9 +7,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
-    <body>
+    <body class="home">
         <header class="header">
             <div class="container">
                 <a href="/" class="logo"><img src="assets/images/logo.svg" alt="themedia" width="150" /></a>
@@ -78,7 +79,7 @@
                                     <div class="circle purple"></div>
                                 </div>
                                 <span>
-                                    увеличивающие <span class="badgeered grey">бизнес-показатели заказчиков</span>
+                                    увеличивающие <span class="markered grey">бизнес-показатели заказчиков</span>
                                 </span>
                             </h1>
                             <form class="main-form form">
@@ -487,6 +488,63 @@
                             </button>
                         </div>
                     </div>
+
+                    <div class="clients">
+                        <div class="container">
+                            <div class="heading">
+                                <div class="badge-area">
+                                    <span class="clients__badge badge purple">Наши клиенты</span>
+                                </div>
+                                <h2 class="clients__title title">Гордимся сотрудничеством с лидерами своих отраслей</h2>
+                            </div>
+                        </div>
+                        <div class="clients__box">
+                            <div class="clients__items swiper clients__items-1">
+                                <div class="clients__wrapper swiper-wrapper">
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clients__items swiper">
+                                <div class="clients__wrapper swiper-wrapper">
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                    <div class="swiper-slide clients__item">
+                                        <img src="assets/images/sts-logo.svg" alt="stslog" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <footer class="footer">
@@ -798,6 +856,27 @@
         <!-- ScrollSmoother requires ScrollTrigger -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- Подключаем Swiper JS -->
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tickerSwiper = new Swiper(".clients__items-1", {
+                    direction: "horizontal",
+                    loop: true,
+                    autoplay: {
+                        delay: 0,
+                        disableOnInteraction: false,
+                    },
+                    speed: 10000,
+                    slidesPerView: "auto",
+                    allowTouchMove: false,
+                    spaceBetween: 0,
+                    freeMode: true,
+                    freeModeMomentum: false,
+                })
+            })
+        </script>
         <script src="js/script.js"></script>
     </body>
 </html>
