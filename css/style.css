@@ -108,8 +108,10 @@ h4 {
     border-radius: 100px;
     color: var(--neutral-lightgrey-100);
     background: var(--main-gradient-color);
-    box-shadow: 0px 10px 30px rgba(246, 7, 22, 0.25);
     overflow: hidden;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Для Safari */
 }
 
 .btn:active::before {
@@ -125,10 +127,15 @@ h4 {
     left: 0;
     right: 0;
 
+    will-change: transform;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Для Safari */
+
     transition: all 0.3s ease;
 }
 .btn:hover::before {
-    transform: scale(2);
+    transform: translateZ(0) scale(2);
 }
 .btn:hover {
     color: var(--neutral-dark-500);
@@ -184,7 +191,6 @@ h4 {
 .btn.white {
     background: var(--neutral-white);
     color: var(--neutral-dark-500);
-    box-shadow: none;
 }
 .btn.white::before {
     background: var(--neutral-dark-500);
@@ -204,7 +210,19 @@ h4 {
 
 .btn.black {
     background: var(--neutral-dark-500);
-    box-shadow: none;
+}
+
+.btn.transparent {
+    background: transparent;
+}
+.btn.transparent::before {
+    background: transparent;
+}
+.btn.transparent:hover {
+    color: var(--neutral-lightgrey-100);
+}
+.btn.transparent .btn__text::after {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.70363 3.33325L13.3333 7.99992L8.70363 12.6666L7.80531 11.7611L10.9015 8.6402H2.66663V7.35964H10.9015L7.80531 4.23875L8.70363 3.33325Z' fill='%23F8F8F8'/%3E%3C/svg%3E");
 }
 
 .main__title {
@@ -645,6 +663,7 @@ body.home .main__title {
     right: 3px;
     top: 3px;
     bottom: 3px;
+    box-shadow: 0px 10px 30px rgba(246, 7, 22, 0.25);
 }
 
 .submit-btn .btn__text::before {
