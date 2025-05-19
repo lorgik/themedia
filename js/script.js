@@ -1,5 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText)
+
+    const textBlock = document.querySelector(".main__title")
+    const splitText = new SplitText(textBlock, { type: "lines", linesClass: "line" })
+
+    // Скрываем все строки перед анимацией
+    gsap.set(splitText.lines, { y: 50, opacity: 0 })
+
+    // Создаем анимацию
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: textBlock,
+            start: "top 80%",
+            toggleActions: "play none none none",
+        },
+    })
+
+    // Анимация для каждой строки с задержкой
+    tl.to(textBlock, { opacity: 1, duration: 0.2 }).to(splitText.lines, {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
+    })
 
     let isServicesShow = false
 
@@ -101,10 +125,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const hash = window.location.hash || "#all"
-    const hashTab = document.querySelector(`[href="${hash}"]`)
-    hashTab.classList.add("active")
+    const hashTab = document.querySelectorAll(`[href="${hash}"]`)
+    hashTab.forEach((tab) => {
+        tab.classList.add("active")
+    })
 
     const casesTabs = document.querySelectorAll(".cases__tab")
+    const blogTabs = document.querySelectorAll(".blog__tab")
 
     casesTabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -112,11 +139,30 @@ document.addEventListener("DOMContentLoaded", () => {
             tab.classList.add("active")
         })
     })
+    blogTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            blogTabs.forEach((tab) => tab.classList.remove("active"))
+            tab.classList.add("active")
+        })
+    })
+
+    const blogContainer = document.querySelector(".blog .container")
+    const blogSlider = document.querySelector(".blog__slider")
+    let containerOffset =
+        +getComputedStyle(blogContainer).marginLeft.slice(0, -2) +
+        +getComputedStyle(blogContainer).paddingLeft.slice(0, -2)
+
+    console.log(containerOffset)
+
+    blogSlider.style.paddingLeft = `${containerOffset}px`
+    blogSlider.style.paddingRight = `${containerOffset}px`
 })
 
 window.addEventListener("load", function () {
     const slider = document.querySelector(".clients__items-1")
     const slider2 = document.querySelector(".clients__items-2")
+    const slider3 = document.querySelector(".industry__slider")
+    const slider4 = document.querySelector(".blog__slider")
     const swiperConfigRun = {
         loop: true,
         allowTouchMove: true,
@@ -127,41 +173,41 @@ window.addEventListener("load", function () {
         },
         effect: "slide",
         speed: 5000, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
-        slidesPerView: 6, //Количество карточек на экране
-        spaceBetween: 0, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
+        slidesPerView: 4, //Количество карточек на экране
+        spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
-        breakpoints: {
-            320: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-                spaceBetween: 10,
-            },
-            480: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-                spaceBetween: 10,
-            },
-            640: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            },
-            768: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            },
-            1000: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            },
-            1360: {
-                slidesPerView: 5,
-                slidesPerGroup: 1,
-            },
-            1920: {
-                slidesPerView: 6,
-                slidesPerGroup: 1,
-            },
-        },
+        // breakpoints: {
+        //     320: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     480: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     640: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     768: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1000: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1360: {
+        //         slidesPerView: 5,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1920: {
+        //         slidesPerView: 6,
+        //         slidesPerGroup: 1,
+        //     },
+        // },
     }
     const swiperConfigRun2 = {
         loop: true,
@@ -173,46 +219,141 @@ window.addEventListener("load", function () {
         },
         effect: "slide",
         speed: 5000, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
-        slidesPerView: 6, //Количество карточек на экране
-        spaceBetween: 0, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
+        slidesPerView: 4, //Количество карточек на экране
+        spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
-        breakpoints: {
-            320: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-                spaceBetween: 10,
-            },
-            480: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-                spaceBetween: 10,
-            },
-            640: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            },
-            768: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            },
-            1000: {
-                slidesPerView: 4,
-                slidesPerGroup: 1,
-            },
-            1360: {
-                slidesPerView: 5,
-                slidesPerGroup: 1,
-            },
-            1920: {
-                slidesPerView: 6,
-                slidesPerGroup: 1,
-            },
-        },
+        // breakpoints: {
+        //     320: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     480: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     640: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     768: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1000: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1360: {
+        //         slidesPerView: 5,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1920: {
+        //         slidesPerView: 6,
+        //         slidesPerGroup: 1,
+        //     },
+        // },
     }
+    const swiperConfigRun3 = {
+        loop: true,
+        allowTouchMove: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true, // значение true меняет направление движения
+        },
+        effect: "slide",
+        speed: 5000, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
+        slidesPerView: "auto", //Количество карточек на экране
+        spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
+        slidesPerGroup: 1, //Пролистывание слайдов за раз
+        // breakpoints: {
+        //     320: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     480: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     640: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     768: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1000: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1360: {
+        //         slidesPerView: 5,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1920: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //     },
+        // },
+    }
+    const swiperConfigRun4 = {
+        loop: false,
+        allowTouchMove: true,
+        autoplay: false,
+        // draggable: true,
+        centeredSlides: false,
+        effect: "slide",
+        speed: 300, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
+        slidesPerView: "auto", //Количество карточек на экране
+        spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
+        slidesPerGroup: 1, //Пролистывание слайдов за раз
+        // breakpoints: {
+        //     320: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     480: {
+        //         slidesPerView: 3,
+        //         slidesPerGroup: 1,
+        //         spaceBetween: 10,
+        //     },
+        //     640: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     768: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1000: {
+        //         slidesPerView: 4,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1360: {
+        //         slidesPerView: 5,
+        //         slidesPerGroup: 1,
+        //     },
+        //     1920: {
+        //         slidesPerView: 6,
+        //         slidesPerGroup: 1,
+        //     },
+        // },
+    }
+
     const swiperRun = new Swiper(slider, swiperConfigRun)
     const swiperRun2 = new Swiper(slider2, swiperConfigRun2)
+    const swiperRun3 = new Swiper(slider3, swiperConfigRun3)
+    const swiperRun4 = new Swiper(slider4, swiperConfigRun4)
     window.addEventListener("resize", () => {
         swiperRun.update()
         swiperRun2.update()
+        swiperRun3.update()
+        swiperRun4.update()
     })
 })
