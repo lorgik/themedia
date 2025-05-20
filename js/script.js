@@ -328,11 +328,11 @@ window.addEventListener("load", function () {
     }
     const swiperConfigRun3 = {
         loop: true,
-        // modules: [Swiper.Autoplay],
         allowTouchMove: true,
         autoplay: {
             delay: 0,
             disableOnInteraction: false,
+            // pauseOnMouseEnter: true,
             reverseDirection: true, // значение true меняет направление движения
         },
         effect: "slide",

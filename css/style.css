@@ -131,9 +131,9 @@ h4 {
 
 /* transition: all 0.3s ease;
 } */
-.menu__item--services:hover::before {
+/* .menu__item--services:hover::before {
     transform: translateZ(0) scale(3.5);
-}
+} */
 .menu__item--services svg {
     position: relative;
 }
@@ -359,8 +359,7 @@ h4 {
     gap: 8px;
 }
 
-.menu__item a,
-.menu__item span {
+.menu__item a {
     padding: 16px;
     display: block;
     opacity: 0.8;
