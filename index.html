@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>themedia</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +19,7 @@
                     <ul class="menu">
                         <li class="menu__item menu__item--services">
                             <a href="javascript:void(0);">
-                                <span>Услуги</span>
+                                <span data-text="Услуги">Услуги</span>
                                 <svg
                                     width="20"
                                     height="19"
@@ -49,14 +50,22 @@
                     </button>
                 </nav>
                 <div class="phone__info">
-                    <a href="#" class="phone__icon icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M18.9918 15.5756C18.867 16.5241 18.4012 17.3948 17.6814 18.0249C16.9615 18.6551 16.0369 19.0017 15.0802 19C9.52208 19 5.00001 14.478 5.00001 8.9199C4.99829 7.96319 5.34489 7.03857 5.97508 6.31874C6.60526 5.5989 7.47593 5.13307 8.42446 5.00826C8.66433 4.97897 8.90723 5.02804 9.11691 5.14815C9.32659 5.26825 9.4918 5.45295 9.58789 5.67466L11.0663 8.9752V8.9836C11.1399 9.15332 11.1703 9.33861 11.1547 9.52294C11.1392 9.70726 11.0783 9.88487 10.9774 10.0399C10.9648 10.0588 10.9515 10.0763 10.9375 10.0938L9.48008 11.8214C10.0044 12.8868 11.1188 13.9914 12.1982 14.5171L13.9021 13.0674C13.9188 13.0534 13.9363 13.0403 13.9546 13.0282C14.1095 12.9249 14.2877 12.8618 14.4731 12.8447C14.6585 12.8276 14.8453 12.857 15.0165 12.9302L15.0256 12.9344L18.3233 14.4121C18.5454 14.5079 18.7306 14.673 18.8511 14.8827C18.9716 15.0924 19.021 15.3355 18.9918 15.5756Z"
-                                fill="#F8F8F8"
-                            />
-                        </svg>
-                    </a>
+                    <div href="#" class="phone__wrapper">
+                        <a href="#" class="phone__icon btn-icon">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M18.9918 15.5756C18.867 16.5241 18.4012 17.3948 17.6814 18.0249C16.9615 18.6551 16.0369 19.0017 15.0802 19C9.52208 19 5.00001 14.478 5.00001 8.9199C4.99829 7.96319 5.34489 7.03857 5.97508 6.31874C6.60526 5.5989 7.47593 5.13307 8.42446 5.00826C8.66433 4.97897 8.90723 5.02804 9.11691 5.14815C9.32659 5.26825 9.4918 5.45295 9.58789 5.67466L11.0663 8.9752V8.9836C11.1399 9.15332 11.1703 9.33861 11.1547 9.52294C11.1392 9.70726 11.0783 9.88487 10.9774 10.0399C10.9648 10.0588 10.9515 10.0763 10.9375 10.0938L9.48008 11.8214C10.0044 12.8868 11.1188 13.9914 12.1982 14.5171L13.9021 13.0674C13.9188 13.0534 13.9363 13.0403 13.9546 13.0282C14.1095 12.9249 14.2877 12.8618 14.4731 12.8447C14.6585 12.8276 14.8453 12.857 15.0165 12.9302L15.0256 12.9344L18.3233 14.4121C18.5454 14.5079 18.7306 14.673 18.8511 14.8827C18.9716 15.0924 19.021 15.3355 18.9918 15.5756Z"
+                                    fill="#F8F8F8"
+                                />
+                            </svg>
+                        </a>
+                    </div>
                     <div class="phone__text">
                         <a href="" class="phone__link">+7 (499) 501-11-16</a>
                         <span class="phone__desc">Звоните, Пн-Пт 9-18</span>
@@ -1251,7 +1260,7 @@
                         <div class="footer__contacts">
                             <span class="footer__contacts-text">С нами легко связаться, мы сейчас онлайн:</span>
                             <div class="footer__messengers">
-                                <a href="#" class="footer__btn">
+                                <a href="#" class="footer__btn btn-icon">
                                     <svg
                                         width="24"
                                         height="24"
@@ -1267,7 +1276,7 @@
                                         />
                                     </svg>
                                 </a>
-                                <a href="#" class="footer__btn">
+                                <a href="#" class="footer__btn btn-icon">
                                     <svg
                                         width="24"
                                         height="24"
@@ -1283,7 +1292,7 @@
                                         />
                                     </svg>
                                 </a>
-                                <a href="#" class="footer__btn">
+                                <a href="#" class="footer__btn btn-icon">
                                     <svg
                                         width="24"
                                         height="24"
@@ -1301,7 +1310,7 @@
                                 </a>
                             </div>
                             <div class="footer__contact">
-                                <a class="footer__btn">
+                                <a class="footer__btn btn-icon">
                                     <svg
                                         width="24"
                                         height="24"
@@ -1319,7 +1328,7 @@
                             </div>
 
                             <div class="footer__contact">
-                                <a class="footer__btn">
+                                <a class="footer__btn btn-icon">
                                     <svg
                                         width="24"
                                         height="24"
@@ -1402,18 +1411,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
-        <script>
-            const lenis = new Lenis()
-
-            function raf(time) {
-                lenis.raf(time)
-                requestAnimationFrame(raf)
-            }
-
-            requestAnimationFrame(raf)
-        </script> -->
 
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>

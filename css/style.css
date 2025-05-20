@@ -102,6 +102,80 @@ h4 {
     margin: 0 auto;
 }
 
+.swiper-slide {
+    will-change: transform;
+}
+
+/* .menu__item--services {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu__item--services:active::before {
+    background: var(--neutral-dark-50);
+}
+.menu__item--services::before {
+    position: absolute;
+    content: "";
+    background: var(--neutral-white);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    will-change: transform;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Для Safari */
+
+/* transition: all 0.3s ease;
+} */
+.menu__item--services:hover::before {
+    transform: translateZ(0) scale(3.5);
+}
+.menu__item--services svg {
+    position: relative;
+}
+.menu__item--services:hover svg path {
+    fill: var(--neutral-dark-500);
+}
+
+.btn-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon:active::before {
+    background: var(--neutral-dark-50);
+}
+.btn-icon::before {
+    position: absolute;
+    content: "";
+    background: var(--neutral-white);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    will-change: transform;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Для Safari */
+
+    transition: all 0.3s ease;
+}
+.btn-icon:hover::before {
+    transform: translateZ(0) scale(3.5);
+}
+.btn-icon svg {
+    position: relative;
+}
+.btn-icon:hover svg path {
+    fill: var(--neutral-dark-500);
+}
+
 .btn {
     position: relative;
     padding: 20px 16px 22px;
@@ -285,10 +359,12 @@ h4 {
     gap: 8px;
 }
 
-.menu__item a {
+.menu__item a,
+.menu__item span {
     padding: 16px;
     display: block;
     opacity: 0.8;
+    overflow: hidden;
 }
 
 .menu__item {
@@ -355,9 +431,15 @@ h4 {
     border-radius: 50%;
 }
 
-.phone__icon::before {
+.phone__wrapper {
+    position: relative;
+    display: flex;
+}
+
+.phone__wrapper::after {
     position: absolute;
     content: "";
+    pointer-events: none;
     top: 0;
     right: 0;
     width: 12px;
@@ -460,6 +542,10 @@ h4 {
     height: 430px;
     aspect-ratio: 3.44 / 4.3;
     border-radius: 30px;
+}
+
+.services__menu .card:hover {
+    transform: scale(0.97);
 }
 
 .card {
@@ -585,7 +671,7 @@ div .center {
     content: "";
     left: 0;
     width: 6px;
-    height: 25px;
+    height: 100%;
 
     background: var(--accent-red-700);
     border-radius: 3px;
@@ -773,6 +859,7 @@ body.home .main__title {
 
     background-image: url("../assets/images/wda-card.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .sign-2 {
     background: var(--accent-red-500);
@@ -783,8 +870,9 @@ body.home .main__title {
 
     box-shadow: 0px 20px 250px 20px rgba(231, 17, 31, 0.75);
 
-    background-image: url("../assets/images/runet-card.jpg");
+    background-image: url("../assets/images/runet-card.png");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .sign-3 {
     background: var(--accent-purple-500);
@@ -823,6 +911,9 @@ body.home .main__title {
 
 .services {
     color: var(--neutral-dark-500);
+}
+
+.services .container {
     padding-top: 140px;
 }
 
@@ -1762,7 +1853,7 @@ a.services__link {
 }
 .footer__btn:hover,
 .phone__icon:hover {
-    background: var(--neutral-white);
+    /* background: var(--neutral-white); */
 }
 .footer__btn:hover path,
 .phone__icon:hover path {
@@ -1829,6 +1920,65 @@ a.services__link {
     .btn {
         padding: 16px 16px 18px;
         font-size: 12px;
+    }
+    .main .container {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    .main__subtitle {
+        font-size: 16px;
+    }
+    .main__title {
+        margin-top: 24px;
+    }
+    .main-form {
+        margin-top: 40px;
+    }
+    .form {
+        max-width: 416px;
+        height: 56px;
+    }
+    .main__desc {
+        margin-top: 32px;
+        font-size: 14px;
+        max-width: 300px;
+    }
+    .main-signs {
+        gap: 24px;
+    }
+    .sign {
+        padding: 24px 16px;
+        border-radius: 20px;
+        aspect-ratio: 2.16 / 3.5;
+        flex-direction: column;
+    }
+    .sign-1 {
+        justify-content: flex-start;
+        gap: 24px;
+        background-size: contain;
+        background-position: center 100%;
+    }
+    .sign-2 {
+        aspect-ratio: 2.16 / 2.5;
+        background-size: contain;
+    }
+    .sign__title {
+        font-size: 26px;
+    }
+    .sign__desc {
+        font-size: 14px;
+    }
+    .services .container {
+        padding-top: 64px;
+    }
+    .badge-area {
+        min-width: 134px;
+    }
+    .badge {
+        padding: 16px 16px 18px;
+    }
+    .title {
+        font-size: 34px;
     }
     .footer__contacts {
         flex-direction: column;

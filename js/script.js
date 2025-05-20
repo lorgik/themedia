@@ -156,6 +156,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
     blogSlider.style.paddingLeft = `${containerOffset}px`
     blogSlider.style.paddingRight = `${containerOffset}px`
+
+    // const links = document.querySelectorAll(".menu__item")
+
+    // links.forEach((link) => {
+    //     const text = link.querySelector("span") ? link.querySelector("span") : link.querySelector("a")
+    //     let isAnimating = false
+
+    //     // Сохраняем оригинальный текст в дата-атрибут
+    //     if (!text.dataset.text) {
+    //         text.dataset.text = text.textContent
+    //     }
+
+    //     link.addEventListener("mouseenter", () => {
+    //         if (isAnimating) return
+    //         isAnimating = true
+
+    //         // Анимация исчезновения
+    //         gsap.to(text, {
+    //             y: -20,
+    //             opacity: 0,
+    //             duration: 0.15,
+    //             ease: "power2.out",
+    //             onComplete: () => {
+    //                 text.textContent = text.dataset.text
+
+    //                 // Анимация появления нового текста
+    //                 gsap.fromTo(
+    //                     text,
+    //                     { y: 20, opacity: 0 },
+    //                     {
+    //                         y: 0,
+    //                         opacity: 1,
+    //                         duration: 0.15,
+    //                         ease: "power2.out",
+    //                         onComplete: () => (isAnimating = false),
+    //                     }
+    //                 )
+    //             },
+    //         })
+    //     })
+
+    //     link.addEventListener("mouseleave", () => {
+    //         if (isAnimating) return
+    //         isAnimating = true
+
+    //         // Анимация исчезновения hover-текста
+    //         gsap.to(text, {
+    //             y: 20,
+    //             opacity: 0,
+    //             duration: 0.15,
+    //             ease: "power2.out",
+    //             onComplete: () => {
+    //                 text.textContent = text.dataset.text
+
+    //                 // Анимация появления оригинального текста
+    //                 gsap.fromTo(
+    //                     text,
+    //                     { y: -20, opacity: 0 },
+    //                     {
+    //                         y: 0,
+    //                         opacity: 1,
+    //                         duration: 0.15,
+    //                         ease: "power2.out",
+    //                         onComplete: () => (isAnimating = false),
+    //                     }
+    //                 )
+    //             },
+    //         })
+    //     })
+    // })
 })
 
 window.addEventListener("load", function () {
@@ -163,6 +233,7 @@ window.addEventListener("load", function () {
     const slider2 = document.querySelector(".clients__items-2")
     const slider3 = document.querySelector(".industry__slider")
     const slider4 = document.querySelector(".blog__slider")
+
     const swiperConfigRun = {
         loop: true,
         allowTouchMove: true,
@@ -219,7 +290,7 @@ window.addEventListener("load", function () {
         },
         effect: "slide",
         speed: 5000, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
-        slidesPerView: 4, //Количество карточек на экране
+        slidesPerView: "auto", //Количество карточек на экране
         spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
         // breakpoints: {
@@ -257,6 +328,7 @@ window.addEventListener("load", function () {
     }
     const swiperConfigRun3 = {
         loop: true,
+        // modules: [Swiper.Autoplay],
         allowTouchMove: true,
         autoplay: {
             delay: 0,
@@ -350,6 +422,10 @@ window.addEventListener("load", function () {
     const swiperRun2 = new Swiper(slider2, swiperConfigRun2)
     const swiperRun3 = new Swiper(slider3, swiperConfigRun3)
     const swiperRun4 = new Swiper(slider4, swiperConfigRun4)
+
+    // slider3.addEventListener("mouseenter", () => swiperRun3.autoplay.pause())
+    // slider3.addEventListener("mouseleave", () => swiperRun3.autoplay.start())
+
     window.addEventListener("resize", () => {
         swiperRun.update()
         swiperRun2.update()
