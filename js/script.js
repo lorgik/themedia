@@ -96,6 +96,23 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     })
 
+    // // Анимация для каждого блока статьи
+    // gsap.utils.toArray(".blog__item").forEach((article, index) => {
+    //     gsap.from(article, {
+    //       opacity: 0,
+    //       y: 50,
+    //       duration: 0.8,
+    //       ease: "power2.out",
+    //       scrollTrigger: {
+    //         trigger: article,
+    //         start: "top 80%", // Анимация начнется, когда верх блока будет на 80% от верха viewport
+    //         toggleActions: "play none none none", // play - при входе в viewport
+    //         // Маркеры для отладки (можно удалить в продакшене)
+    //         markers: false
+    //       },
+    //       delay: index * 0.1 // Небольшая задержка между анимациями
+    //     });
+
     const servicesMenu = document.querySelector(".services__menu")
     const servicesMenuBtn = document.querySelector(".menu__item--services")
 
