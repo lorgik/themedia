@@ -1270,6 +1270,13 @@ a.services__link {
     /* align-items: start; */
 }
 
+.cases__item {
+    transition: all 0.2s ease;
+}
+.cases__item:hover {
+    transform: translateY(-10px);
+}
+
 /* .cases__item .case__img-wrapper {
     aspect-ratio: 1;
 }
@@ -1343,6 +1350,7 @@ a.services__link {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    width: max-content;
 }
 
 .clients {
@@ -1531,6 +1539,8 @@ a.services__link {
 
 .solutions__btn {
     margin-top: 68px;
+    width: max-content;
+    display: block;
 }
 
 .blog {
