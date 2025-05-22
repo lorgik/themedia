@@ -25,67 +25,79 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out",
     })
 
-    let isServicesShow = false
+    let smoother
 
-    const smoother = ScrollSmoother.create({
-        smooth: 1,
-        effects: true,
-        smoothTouch: false, // Отключаем для мобильных устройств
-        normalizeScroll: true, // Оптимизация для тач-устройств
-    })
+    if (window.innerWidth > 1280) {
+        const smoother = ScrollSmoother.create({
+            smooth: 1,
+            effects: true,
+            smoothTouch: true, // Отключаем для мобильных устройств
+            normalizeScroll: true, // Оптимизация для тач-устройств
+        })
+    }
+
+    let isServicesShow = false
 
     const header = document.querySelector(".header")
     let lastScroll = 0
     let isAnimating = false
-    let headerAnimation = gsap.to(header, {
+
+    // Создаем анимацию заранее
+    const headerAnimation = gsap.to(header, {
         y: -100,
         duration: 0.3,
-        paused: true, // Создаем анимацию заранее, но не запускаем
+        paused: true,
     })
+
+    // Функция для мониторинга FPS (запускается один раз)
+    function startFPSMonitoring() {
+        let lastTime = performance.now()
+        let frames = 0
+        let currentFPS = 0
+
+        function checkFPS() {
+            const now = performance.now()
+            frames++
+
+            if (now >= lastTime + 1000) {
+                currentFPS = Math.round((frames * 1000) / (now - lastTime))
+                frames = 0
+                lastTime = now
+
+                if (currentFPS < 30) {
+                    smoother?.effects(false) // Опциональная проверка на существование smoother
+                }
+            }
+
+            requestAnimationFrame(checkFPS)
+        }
+
+        checkFPS()
+    }
+
+    // Запускаем мониторинг FPS
+    startFPSMonitoring()
 
     ScrollTrigger.create({
         start: 0,
         end: "max",
         onUpdate: (self) => {
-            let lastTime = performance.now()
-            let frames = 0
-            let currentFPS = 0
-
-            function checkFPS() {
-                const now = performance.now()
-                frames++
-
-                if (now >= lastTime + 1000) {
-                    // Проверяем каждую секунду
-                    currentFPS = Math.round((frames * 1000) / (now - lastTime))
-                    frames = 0
-                    lastTime = now
-
-                    // Пример использования для отключения эффектов
-                    if (currentFPS < 30) {
-                        smoother.effects(false)
-                    }
-                }
-
-                requestAnimationFrame(checkFPS)
-            }
-
-            checkFPS() // Запускаем отслеживание
-
             const scrollY = self.scroll()
 
-            // Если анимация уже выполняется - пропускаем кадр
             if (isAnimating) return
 
             isAnimating = true
 
             requestAnimationFrame(() => {
                 if (scrollY <= 0) {
+                    // В самом верху страницы - показываем хэдер
                     headerAnimation.reverse()
                 } else {
                     if (scrollY > lastScroll && !isServicesShow) {
+                        // Скролл вниз - скрываем хэдер
                         headerAnimation.play()
                     } else {
+                        // Скролл вверх - показываем хэдер
                         headerAnimation.reverse()
                     }
                 }
@@ -95,6 +107,75 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         },
     })
+
+    // const smoother = ScrollSmoother.create({
+    //     smooth: 1,
+    //     effects: true,
+    //     smoothTouch: false, // Отключаем для мобильных устройств
+    //     normalizeScroll: true, // Оптимизация для тач-устройств
+    // })
+
+    // const header = document.querySelector(".header")
+    // let lastScroll = 0
+    // let isAnimating = false
+    // let headerAnimation = gsap.to(header, {
+    //     y: -100,
+    //     duration: 0.3,
+    //     paused: true, // Создаем анимацию заранее, но не запускаем
+    // })
+
+    // ScrollTrigger.create({
+    //     start: 0,
+    //     end: "max",
+    //     onUpdate: (self) => {
+    //         let lastTime = performance.now()
+    //         let frames = 0
+    //         let currentFPS = 0
+
+    //         function checkFPS() {
+    //             const now = performance.now()
+    //             frames++
+
+    //             if (now >= lastTime + 1000) {
+    //                 // Проверяем каждую секунду
+    //                 currentFPS = Math.round((frames * 1000) / (now - lastTime))
+    //                 frames = 0
+    //                 lastTime = now
+
+    //                 // Пример использования для отключения эффектов
+    //                 if (currentFPS < 30) {
+    //                     smoother.effects(false)
+    //                 }
+    //             }
+
+    //             requestAnimationFrame(checkFPS)
+    //         }
+
+    //         checkFPS() // Запускаем отслеживание
+
+    //         const scrollY = self.scroll()
+
+    //         // Если анимация уже выполняется - пропускаем кадр
+    //         if (isAnimating) return
+
+    //         isAnimating = true
+
+    //         requestAnimationFrame(() => {
+    //             if (scrollY <= 0) {
+    //                 headerAnimation.reverse()
+    //             } else {
+    //                 if (scrollY > lastScroll && !isServicesShow) {
+    //                     headerAnimation.play()
+    //                 } else {
+    //                     headerAnimation.reverse()
+    //                 }
+    //             }
+
+    //             lastScroll = scrollY
+    //             isAnimating = false
+    //         })
+    //     },
+    // })
 
     // // Анимация для каждого блока статьи
     // gsap.utils.toArray(".blog__item").forEach((article, index) => {
@@ -401,6 +482,12 @@ window.addEventListener("load", function () {
         slidesPerView: "auto", //Количество карточек на экране
         spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
+        breakpoints: {
+            // При ширине экрана меньше 768px отключаем Swiper
+            640: {
+                enabled: false,
+            },
+        },
         // breakpoints: {
         //     320: {
         //         slidesPerView: 3,
@@ -438,15 +525,19 @@ window.addEventListener("load", function () {
     const swiperRun = new Swiper(slider, swiperConfigRun)
     const swiperRun2 = new Swiper(slider2, swiperConfigRun2)
     const swiperRun3 = new Swiper(slider3, swiperConfigRun3)
-    const swiperRun4 = new Swiper(slider4, swiperConfigRun4)
+    let swiperRun4
 
-    // slider3.addEventListener("mouseenter", () => swiperRun3.autoplay.pause())
-    // slider3.addEventListener("mouseleave", () => swiperRun3.autoplay.start())
+    if (window.innerWidth > 640) {
+        swiperRun4 = new Swiper(slider4, swiperConfigRun4)
+
+        window.addEventListener("resize", () => {
+            swiperRun4.update()
+        })
+    }
 
     window.addEventListener("resize", () => {
         swiperRun.update()
         swiperRun2.update()
         swiperRun3.update()
-        swiperRun4.update()
     })
 })
