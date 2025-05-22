@@ -942,6 +942,7 @@ body.home .main__title {
     padding: 20px 24px 22px;
     font-size: 14px;
     border-radius: 100px;
+    line-height: 1;
 }
 
 .badge.orange {
@@ -1071,7 +1072,7 @@ body.home .main__title {
 }
 
 .services__card:not(.services__card-1, .services__card-5) svg {
-    margin-top: 32px;
+    margin-top: auto;
 }
 
 .services__card-3 svg path {
@@ -1256,6 +1257,7 @@ a.services__link {
 }
 
 .tab {
+    font-weight: 500;
     padding: 20px 24px 22px;
     border-radius: 100px;
     background: var(--neutral-white);
@@ -1524,8 +1526,9 @@ a.services__link {
     left: 0;
     top: 0;
     right: 0;
+    bottom: -70px;
     width: inherit;
-    height: 825px;
+
     background: radial-gradient(100% 100% at 50% 0%, #111018 52.97%, #92111c 100%);
 }
 
@@ -1964,6 +1967,9 @@ a.services__link {
     .desc {
         font-size: 16px;
     }
+    .main__title {
+        font-size: 38px;
+    }
     .main__title,
     .numbers__title {
         margin-top: 24px;
@@ -2051,6 +2057,9 @@ a.services__link {
     }
     .services__card-text {
         font-size: 14px;
+    }
+    .services__card:not(.services__card-1, .services__card-5) svg {
+        margin-top: 32px;
     }
     .services-form {
         max-width: 450px;
@@ -2214,6 +2223,7 @@ a.services__link {
         font-size: 14px;
     }
     .main__title {
+        font-size: 28px;
         margin-top: 16px;
         text-align: left;
         display: flex;
@@ -2278,7 +2288,21 @@ a.services__link {
         grid-template-columns: 1fr;
     }
     .author {
-        margin-top: 56px;
+        margin-top: auto;
+    }
+    .services__card:not(.services__card-2, .services__card-3, .services__card-4, .services__card-5) {
+        aspect-ratio: 3.4 / 3.8;
+    }
+    .services__card-2,
+    .services__card-3,
+    .services__card-4 {
+        min-height: 352px;
+    }
+    .services__card:not(.services__card-1, .services__card-5) svg {
+        margin-top: auto;
+    }
+    .services__card-5 {
+        aspect-ratio: 3.4 / 6.7;
     }
     .services__card-1 .services__card-text {
         font-size: 16px;
@@ -2291,6 +2315,7 @@ a.services__link {
     }
     [class*="numbers-card-"] {
         aspect-ratio: 3.5 / 3;
+        max-height: 350px;
     }
     .numbers-card-1 {
         justify-content: flex-start;
@@ -2303,6 +2328,9 @@ a.services__link {
     }
     .clients .container {
         padding-top: 120px;
+    }
+    .clients__item img {
+        width: 200px;
     }
     .levels .container {
         padding-top: 120px;
@@ -2394,5 +2422,55 @@ a.services__link {
     }
     .footer__contacts {
         gap: 24px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        max-width: 1464px;
+    }
+    .main .container {
+        padding-top: 160px;
+        padding-bottom: 160px;
+    }
+    .main__subtitle {
+        font-size: 22px;
+    }
+    .main-form,
+    .services-form {
+        margin-top: 64px;
+        max-width: 495px;
+        height: 76px;
+    }
+    .phone-input::placeholder {
+        font-size: 16px;
+    }
+    .btn {
+        padding: 24px 20px 28px;
+        font-size: 16px;
+    }
+    .main__desc {
+        font-size: 22px;
+        max-width: 430px;
+    }
+    .badge {
+        font-size: 16px;
+        padding: 24px 24px 26px;
+    }
+    .title {
+        font-size: 60px;
+    }
+    .services-box {
+        margin-top: 64px;
+    }
+    .services__card-1 .services__card-text {
+        font-size: 22px;
+    }
+    .services__card-text {
+        font-size: 18px;
+    }
+    .services__card-title {
+        font-size: 42px;
+        max-width: 430px;
     }
 }

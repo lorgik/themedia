@@ -1,6 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText)
 
+    // gsap.utils.toArray(".blog__item").forEach((article, index) => {
+    //     gsap.from(article, {
+    //         opacity: 0,
+    //         y: 50,
+    //         duration: 0.8,
+    //         ease: "power2.out",
+    //         scrollTrigger: {
+    //             trigger: article,
+    //             start: "top 80%", // Анимация начнется, когда верх блока будет на 80% от верха viewport
+    //             toggleActions: "play none none none", // play - при входе в viewport
+    //             // Маркеры для отладки (можно удалить в продакшене)
+    //             markers: false,
+    //         },
+    //         delay: index * 0.1, // Небольшая задержка между анимациями
+    //     })
+    // })
+
+    if (document.fonts) {
+        document.fonts.load("bold 16px 'Open Sans'", "b").then(function () {
+            console.log("font loaded")
+        })
+    }
+
     const textBlock = document.querySelector(".main__title")
     const splitText = new SplitText(textBlock, { type: "lines", linesClass: "line" })
 
