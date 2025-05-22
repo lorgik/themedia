@@ -505,12 +505,7 @@ window.addEventListener("load", function () {
         slidesPerView: "auto", //Количество карточек на экране
         spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
-        breakpoints: {
-            // При ширине экрана меньше 768px отключаем Swiper
-            640: {
-                enabled: false,
-            },
-        },
+        // breakpoints: {},
         // breakpoints: {
         //     320: {
         //         slidesPerView: 3,
