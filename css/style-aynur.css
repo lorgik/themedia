@@ -1974,6 +1974,9 @@ a.services__link {
     .numbers__title {
         margin-top: 24px;
     }
+    .main__circles {
+        display: none;
+    }
     .main-form {
         margin-top: 40px;
     }
@@ -2223,12 +2226,18 @@ a.services__link {
         font-size: 14px;
     }
     .main__title {
+        /* font-size: 28px; */
         font-size: 28px;
+        font-size: clamp(28px, 7vw, 55px);
+        line-height: var(--title-line-height);
         margin-top: 16px;
         text-align: left;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+    }
+    .main__title span {
+        font-size: clamp(28px, 7vw, 55px);
     }
     .main__desc {
         margin-top: 24px;
