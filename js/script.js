@@ -365,41 +365,9 @@ window.addEventListener("load", function () {
         },
         effect: "slide",
         speed: 5000, //Скорость пролистывания слайдов, чем больше значение, тем медленнее двигаются слайды
-        slidesPerView: 4, //Количество карточек на экране
+        slidesPerView: "auto", //Количество карточек на экране
         spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     480: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     640: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     768: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1000: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1360: {
-        //         slidesPerView: 5,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1920: {
-        //         slidesPerView: 6,
-        //         slidesPerGroup: 1,
-        //     },
-        // },
     }
     const swiperConfigRun2 = {
         loop: true,
@@ -414,38 +382,6 @@ window.addEventListener("load", function () {
         slidesPerView: "auto", //Количество карточек на экране
         spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     480: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     640: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     768: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1000: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1360: {
-        //         slidesPerView: 5,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1920: {
-        //         slidesPerView: 6,
-        //         slidesPerGroup: 1,
-        //     },
-        // },
     }
     const swiperConfigRun3 = {
         loop: true,
@@ -461,38 +397,6 @@ window.addEventListener("load", function () {
         slidesPerView: "auto", //Количество карточек на экране
         spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     480: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     640: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     768: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1000: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1360: {
-        //         slidesPerView: 5,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1920: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //     },
-        // },
     }
     const swiperConfigRun4 = {
         loop: false,
@@ -505,39 +409,6 @@ window.addEventListener("load", function () {
         slidesPerView: "auto", //Количество карточек на экране
         spaceBetween: 40, //Отступ между карточками, если меняем здесь, то меняем и в переменных root
         slidesPerGroup: 1, //Пролистывание слайдов за раз
-        // breakpoints: {},
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     480: {
-        //         slidesPerView: 3,
-        //         slidesPerGroup: 1,
-        //         spaceBetween: 10,
-        //     },
-        //     640: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     768: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1000: {
-        //         slidesPerView: 4,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1360: {
-        //         slidesPerView: 5,
-        //         slidesPerGroup: 1,
-        //     },
-        //     1920: {
-        //         slidesPerView: 6,
-        //         slidesPerGroup: 1,
-        //     },
-        // },
     }
 
     const swiperRun = new Swiper(slider, swiperConfigRun)
@@ -557,5 +428,31 @@ window.addEventListener("load", function () {
         swiperRun.update()
         swiperRun2.update()
         swiperRun3.update()
+    })
+})
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     new Splide(".splide", {
+//         type: "loop",
+//         perPage: 4,
+//         autoScroll: {
+//             speed: 2,
+//         },
+//     }).mount()
+// })
+
+const linksCategories = document.querySelectorAll(".footer__category")
+
+linksCategories.forEach((linkCategory) => {
+    const categoryLink = linkCategory.querySelector(".category__link")
+    const arrow = categoryLink.querySelector(".category__link-arrow")
+    categoryLink.href = "javascript:void(0);"
+    const links = linkCategory.querySelectorAll(".footer__link")
+
+    categoryLink.addEventListener("click", () => {
+        arrow.classList.toggle("toggled")
+        links.forEach((link) => {
+            link.classList.toggle("visible")
+        })
     })
 })
