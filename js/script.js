@@ -1,23 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText)
 
-    // gsap.utils.toArray(".blog__item").forEach((article, index) => {
-    //     gsap.from(article, {
-    //         opacity: 0,
-    //         y: 50,
-    //         duration: 0.8,
-    //         ease: "power2.out",
-    //         scrollTrigger: {
-    //             trigger: article,
-    //             start: "top 80%", // Анимация начнется, когда верх блока будет на 80% от верха viewport
-    //             toggleActions: "play none none none", // play - при входе в viewport
-    //             // Маркеры для отладки (можно удалить в продакшене)
-    //             markers: false,
-    //         },
-    //         delay: index * 0.1, // Небольшая задержка между анимациями
-    //     })
-    // })
-
     if (document.fonts) {
         document.fonts.load("bold 16px 'Open Sans'", "b").then(function () {
             console.log("font loaded")
@@ -131,92 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     })
 
-    // const smoother = ScrollSmoother.create({
-    //     smooth: 1,
-    //     effects: true,
-    //     smoothTouch: false, // Отключаем для мобильных устройств
-    //     normalizeScroll: true, // Оптимизация для тач-устройств
-    // })
-
-    // const header = document.querySelector(".header")
-    // let lastScroll = 0
-    // let isAnimating = false
-    // let headerAnimation = gsap.to(header, {
-    //     y: -100,
-    //     duration: 0.3,
-    //     paused: true, // Создаем анимацию заранее, но не запускаем
-    // })
-
-    // ScrollTrigger.create({
-    //     start: 0,
-    //     end: "max",
-    //     onUpdate: (self) => {
-    //         let lastTime = performance.now()
-    //         let frames = 0
-    //         let currentFPS = 0
-
-    //         function checkFPS() {
-    //             const now = performance.now()
-    //             frames++
-
-    //             if (now >= lastTime + 1000) {
-    //                 // Проверяем каждую секунду
-    //                 currentFPS = Math.round((frames * 1000) / (now - lastTime))
-    //                 frames = 0
-    //                 lastTime = now
-
-    //                 // Пример использования для отключения эффектов
-    //                 if (currentFPS < 30) {
-    //                     smoother.effects(false)
-    //                 }
-    //             }
-
-    //             requestAnimationFrame(checkFPS)
-    //         }
-
-    //         checkFPS() // Запускаем отслеживание
-
-    //         const scrollY = self.scroll()
-
-    //         // Если анимация уже выполняется - пропускаем кадр
-    //         if (isAnimating) return
-
-    //         isAnimating = true
-
-    //         requestAnimationFrame(() => {
-    //             if (scrollY <= 0) {
-    //                 headerAnimation.reverse()
-    //             } else {
-    //                 if (scrollY > lastScroll && !isServicesShow) {
-    //                     headerAnimation.play()
-    //                 } else {
-    //                     headerAnimation.reverse()
-    //                 }
-    //             }
-
-    //             lastScroll = scrollY
-    //             isAnimating = false
-    //         })
-    //     },
-    // })
-
-    // // Анимация для каждого блока статьи
-    // gsap.utils.toArray(".blog__item").forEach((article, index) => {
-    //     gsap.from(article, {
-    //       opacity: 0,
-    //       y: 50,
-    //       duration: 0.8,
-    //       ease: "power2.out",
-    //       scrollTrigger: {
-    //         trigger: article,
-    //         start: "top 80%", // Анимация начнется, когда верх блока будет на 80% от верха viewport
-    //         toggleActions: "play none none none", // play - при входе в viewport
-    //         // Маркеры для отладки (можно удалить в продакшене)
-    //         markers: false
-    //       },
-    //       delay: index * 0.1 // Небольшая задержка между анимациями
-    //     });
-
     const servicesMenu = document.querySelector(".services__menu")
     const servicesMenuBtn = document.querySelector(".menu__item--services")
 
@@ -277,76 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     blogSlider.style.paddingLeft = `${containerOffset}px`
     blogSlider.style.paddingRight = `${containerOffset}px`
-
-    // const links = document.querySelectorAll(".menu__item")
-
-    // links.forEach((link) => {
-    //     const text = link.querySelector("span") ? link.querySelector("span") : link.querySelector("a")
-    //     let isAnimating = false
-
-    //     // Сохраняем оригинальный текст в дата-атрибут
-    //     if (!text.dataset.text) {
-    //         text.dataset.text = text.textContent
-    //     }
-
-    //     link.addEventListener("mouseenter", () => {
-    //         if (isAnimating) return
-    //         isAnimating = true
-
-    //         // Анимация исчезновения
-    //         gsap.to(text, {
-    //             y: -20,
-    //             opacity: 0,
-    //             duration: 0.15,
-    //             ease: "power2.out",
-    //             onComplete: () => {
-    //                 text.textContent = text.dataset.text
-
-    //                 // Анимация появления нового текста
-    //                 gsap.fromTo(
-    //                     text,
-    //                     { y: 20, opacity: 0 },
-    //                     {
-    //                         y: 0,
-    //                         opacity: 1,
-    //                         duration: 0.15,
-    //                         ease: "power2.out",
-    //                         onComplete: () => (isAnimating = false),
-    //                     }
-    //                 )
-    //             },
-    //         })
-    //     })
-
-    //     link.addEventListener("mouseleave", () => {
-    //         if (isAnimating) return
-    //         isAnimating = true
-
-    //         // Анимация исчезновения hover-текста
-    //         gsap.to(text, {
-    //             y: 20,
-    //             opacity: 0,
-    //             duration: 0.15,
-    //             ease: "power2.out",
-    //             onComplete: () => {
-    //                 text.textContent = text.dataset.text
-
-    //                 // Анимация появления оригинального текста
-    //                 gsap.fromTo(
-    //                     text,
-    //                     { y: -20, opacity: 0 },
-    //                     {
-    //                         y: 0,
-    //                         opacity: 1,
-    //                         duration: 0.15,
-    //                         ease: "power2.out",
-    //                         onComplete: () => (isAnimating = false),
-    //                     }
-    //                 )
-    //             },
-    //         })
-    //     })
-    // })
 })
 
 window.addEventListener("load", function () {
@@ -431,28 +258,33 @@ window.addEventListener("load", function () {
     })
 })
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     new Splide(".splide", {
-//         type: "loop",
-//         perPage: 4,
-//         autoScroll: {
-//             speed: 2,
-//         },
-//     }).mount()
-// })
-
 const linksCategories = document.querySelectorAll(".footer__category")
 
-linksCategories.forEach((linkCategory) => {
-    const categoryLink = linkCategory.querySelector(".category__link")
-    const arrow = categoryLink.querySelector(".category__link-arrow")
-    categoryLink.href = "javascript:void(0);"
-    const links = linkCategory.querySelectorAll(".footer__link")
+function linkCategoriesHandler(event, arrow, links) {
+    event.preventDefault(event)
 
-    categoryLink.addEventListener("click", () => {
-        arrow.classList.toggle("toggled")
-        links.forEach((link) => {
-            link.classList.toggle("visible")
-        })
+    arrow.classList.toggle("toggled")
+    links.forEach((link) => {
+        link.classList.toggle("visible")
     })
+}
+
+const setMobile = () => {
+    linksCategories.forEach((linkCategory) => {
+        const categoryLink = linkCategory.querySelector(".category__link")
+        const arrow = categoryLink.querySelector(".category__link-arrow")
+        const links = linkCategory.querySelectorAll(".footer__link")
+
+        if (window.innerWidth <= 640) {
+            categoryLink.addEventListener("click", (event) => linkCategoriesHandler(event, arrow, links))
+        } else {
+            categoryLink.removeEventListener("click", (event) => linkCategoriesHandler(event, arrow, links))
+        }
+    })
+}
+
+setMobile()
+
+window.addEventListener("resize", () => {
+    setMobile()
 })
