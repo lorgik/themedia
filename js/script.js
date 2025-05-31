@@ -273,7 +273,7 @@ const setMobile = () => {
     linksCategories.forEach((linkCategory) => {
         const categoryLink = linkCategory.querySelector(".category__link")
         const arrow = categoryLink.querySelector(".category__link-arrow")
-        const links = linkCategory.querySelectorAll(".footer__link")
+        const links = linkCategory.querySelectorAll(".link__item")
 
         if (window.innerWidth <= 640) {
             categoryLink.addEventListener("click", (event) => linkCategoriesHandler(event, arrow, links))

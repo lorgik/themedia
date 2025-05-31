@@ -9,7 +9,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
         <link rel="stylesheet" href="css/style-aynur.css" />
     </head>
     <body class="home">
@@ -35,12 +34,26 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="menu__item"><a href="#">Кейсы</a></li>
-                        <li class="menu__item"><a href="#">Отраслевые решения</a></li>
-                        <li class="menu__item"><a href="#">Блог</a></li>
-                        <li class="menu__item"><a href="#">О нас</a></li>
-                        <li class="menu__item"><a href="#">Карьера</a></li>
-                        <li class="menu__item"><a href="#">Контакты</a></li>
+                        <a class="menu__item">
+                            <li href="#" class="link__item"><span data-title="Кейсы">Кейсы</span></li>
+                        </a>
+                        <a class="menu__item">
+                            <li href="#" class="link__item">
+                                <span data-title="Отраслевые решения">Отраслевые решения</span>
+                            </li>
+                        </a>
+                        <a class="menu__item">
+                            <li href="#" class="link__item"><span data-title="Блог">Блог</span></li>
+                        </a>
+                        <a class="menu__item">
+                            <li href="#" class="link__item"><span data-title="О нас">О нас</span></li>
+                        </a>
+                        <a class="menu__item">
+                            <li href="#" class="link__item"><span data-title="Карьера">Карьера</span></li>
+                        </a>
+                        <a class="menu__item">
+                            <li href="#" class="link__item"><span data-title="Контакты">Контакты</span></li>
+                        </a>
                     </ul>
                     <button class="burger btn-icon">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,14 +114,14 @@
                                         maxlength="18"
                                         required
                                     />
-                                    <div class="country-code">+7</div>
+                                    <!-- <div class="country-code">+7</div> -->
                                 </div>
                                 <button type="submit" class="submit-btn btn">
                                     <span class="btn__text">записаться на разбор</span>
                                 </button>
                             </form>
                             <p class="main__desc">
-                                <span class="bold">Оставьте заявку на системный разбор</span> вашего маркетингового
+                                <span class="w-600">Оставьте заявку на системный разбор</span> вашего маркетингового
                                 отдела
                             </p>
                             <div class="main-signs">
@@ -166,7 +179,7 @@
                                     </svg>
 
                                     <p class="services__card-text">
-                                        <span class="semibold">Являемся эталоном качества оказания digital услуг</span>
+                                        <span class="w-600">Являемся эталоном качества оказания digital услуг</span>
                                         для представителей бизнеса и профессионального сообщества в РФ и СНГ
                                     </p>
                                     <div class="author">
@@ -197,7 +210,11 @@
                                             />
                                         </svg>
 
-                                        <span>telegram канал CEO themedia</span>
+                                        <div class="link__item">
+                                            <span data-title="telegram канал CEO themedia"
+                                                >telegram канал CEO themedia</span
+                                            >
+                                        </div>
                                     </a>
                                 </div>
                                 <a class="services__card services__card-2" href="javascript:void(0);">
@@ -1102,8 +1119,8 @@
                                             <span class="markered white">для вашего бизнеса</span>
                                         </h2>
                                         <p class="contacts__desc desc">
-                                            <span class="bold">Нажмите ”Получить КП” или свяжитесь с нами</span> удобным
-                                            способом
+                                            <span class="w-600">Нажмите ”Получить КП” или свяжитесь с нами</span>
+                                            удобным способом
                                         </p>
                                         <div class="contacts__btns">
                                             <button class="contacts__btn btn black kp">
@@ -1137,7 +1154,7 @@
                         </div>
 
                         <div class="footer__links">
-                            <div class="footer__category footer__services">
+                            <ul class="footer__category footer__services">
                                 <a href="#" class="footer__link category__link"
                                     ><span>Услуги</span
                                     ><svg
@@ -1167,17 +1184,37 @@
                                         </svg>
                                     </div>
                                 </a>
-                                <a href="#" class="footer__link">Система 360</a>
-                                <a href="#" class="footer__link">Контекстная реклама</a>
-                                <a href="#" class="footer__link">Таргетированная реклама</a>
-                                <a href="#" class="footer__link">Дизайн и креатив</a>
-                                <a href="#" class="footer__link">SMM</a>
-                                <a href="#" class="footer__link">Разработка</a>
-                                <a href="#" class="footer__link">Авито</a>
-                                <a href="#" class="footer__link">AI-решения</a>
-                            </div>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Система 360">Система 360</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Контекстная реклама"
+                                        >Контекстная реклама</span
+                                    >
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Таргетированная реклама"
+                                        >Таргетированная реклама</span
+                                    >
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Дизайн и креатив">Дизайн и креатив</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="SMM">SMM</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Разработка">Разработка</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Авито">Авито</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="AI-решения">AI-решения</span>
+                                </a>
+                            </ul>
 
-                            <div class="footer__category">
+                            <ul class="footer__category">
                                 <a href="#" class="footer__link category__link"
                                     ><span>Полезное</span>
                                     <div class="category__link-arrow">
@@ -1194,11 +1231,15 @@
                                             />
                                         </svg></div
                                 ></a>
-                                <a href="#" class="footer__link">Блог</a>
-                                <a href="#" class="footer__link">Отраслевые решения</a>
-                            </div>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Блог">Блог</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Отраслевые решения">Отраслевые решения</span>
+                                </a>
+                            </ul>
 
-                            <div class="footer__category">
+                            <ul class="footer__category">
                                 <a href="#" class="footer__link category__link"
                                     ><span>Компания</span>
                                     <div class="category__link-arrow">
@@ -1215,10 +1256,16 @@
                                             />
                                         </svg></div
                                 ></a>
-                                <a href="#" class="footer__link">О компании</a>
-                                <a href="#" class="footer__link">Карьера</a>
-                                <a href="#" class="footer__link">Контакты</a>
-                            </div>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="О компании">О компании</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Карьера">Карьера</span>
+                                </a>
+                                <a href="#" class="link__item">
+                                    <span class="footer__link" data-title="Контакты">Контакты</span>
+                                </a>
+                            </ul>
 
                             <div class="footer__cards">
                                 <a class="card orange">
